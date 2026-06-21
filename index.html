@@ -1,11 +1,279 @@
+```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Command Vault</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Inter, Segoe UI, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    padding:40px 20px;
+    background:
+    radial-gradient(circle at top left,#8b5cf6 0%,transparent 30%),
+    radial-gradient(circle at bottom right,#a855f7 0%,transparent 30%),
+    #0f0f1a;
+    color:white;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+}
+
+.header{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.header h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+.header p{
+    opacity:.7;
+}
+
+.glass{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(16px);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:24px;
+    box-shadow:0 8px 32px rgba(0,0,0,.3);
+}
+
+.tabs{
+    display:flex;
+    gap:12px;
+    margin-bottom:20px;
+}
+
+.tab{
+    border:none;
+    padding:12px 24px;
+    border-radius:12px;
+    cursor:pointer;
+    background:rgba(255,255,255,.08);
+    color:white;
+    transition:.3s;
+}
+
+.tab.active{
+    background:#8b5cf6;
+}
+
+.search{
+    width:100%;
+    padding:16px;
+    border:none;
+    outline:none;
+    border-radius:16px;
+    background:rgba(255,255,255,.08);
+    color:white;
+    margin-bottom:25px;
+}
+
+.search::placeholder{
+    color:#bbb;
+}
+
+.commands{
+    display:grid;
+    gap:16px;
+}
+
+.card{
+    padding:20px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.command-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    margin-top:12px;
+}
+
+.code{
+    flex:1;
+    background:#121220;
+    padding:12px;
+    border-radius:12px;
+    overflow:auto;
+    font-family:Consolas, monospace;
+}
+
+.copy-btn{
+    border:none;
+    cursor:pointer;
+    padding:10px 18px;
+    border-radius:12px;
+    background:#8b5cf6;
+    color:white;
+    transition:.3s;
+}
+
+.copy-btn:hover{
+    transform:translateY(-2px);
+}
+
+.hidden{
+    display:none;
+}
+
+.footer{
+    text-align:center;
+    opacity:.5;
+    margin-top:30px;
+}
+</style>
 </head>
 <body>
-  <h1>سلام دنیا!</h1>
-  <p>این اولین سایت من روی GitHub Pages است.</p>
+
+<div class="container">
+
+<div class="header">
+<h1>⚡ Command Vault</h1>
+<p>Personal Linux & Windows Cheat Sheet</p>
+</div>
+
+<div class="tabs">
+<button class="tab active" onclick="switchTab('linux',this)">Linux</button>
+<button class="tab" onclick="switchTab('windows',this)">Windows</button>
+</div>
+
+<input
+type="text"
+id="search"
+class="search glass"
+placeholder="Search commands..."
+onkeyup="filterCommands()"
+/>
+
+<div id="linux" class="commands">
+
+<div class="card glass">
+<h3>Show Files</h3>
+<div class="command-row">
+<div class="code">ls -la</div>
+<button class="copy-btn" onclick="copyText('ls -la',this)">Copy</button>
+</div>
+</div>
+
+<div class="card glass">
+<h3>Check Disk Usage</h3>
+<div class="command-row">
+<div class="code">df -h</div>
+<button class="copy-btn" onclick="copyText('df -h',this)">Copy</button>
+</div>
+</div>
+
+<div class="card glass">
+<h3>Find Process</h3>
+<div class="command-row">
+<div class="code">ps aux | grep nginx</div>
+<button class="copy-btn" onclick="copyText('ps aux | grep nginx',this)">Copy</button>
+</div>
+</div>
+
+</div>
+
+<div id="windows" class="commands hidden">
+
+<div class="card glass">
+<h3>Show Files</h3>
+<div class="command-row">
+<div class="code">dir</div>
+<button class="copy-btn" onclick="copyText('dir',this)">Copy</button>
+</div>
+</div>
+
+<div class="card glass">
+<h3>IP Configuration</h3>
+<div class="command-row">
+<div class="code">ipconfig /all</div>
+<button class="copy-btn" onclick="copyText('ipconfig /all',this)">Copy</button>
+</div>
+</div>
+
+<div class="card glass">
+<h3>Ping Google</h3>
+<div class="command-row">
+<div class="code">ping google.com</div>
+<button class="copy-btn" onclick="copyText('ping google.com',this)">Copy</button>
+</div>
+</div>
+
+</div>
+
+<div class="footer">
+Command Vault ©
+</div>
+
+</div>
+
+<script>
+
+function switchTab(tabName,btn){
+
+document.getElementById('linux').classList.add('hidden');
+document.getElementById('windows').classList.add('hidden');
+
+document.getElementById(tabName).classList.remove('hidden');
+
+document.querySelectorAll('.tab').forEach(t=>{
+t.classList.remove('active');
+});
+
+btn.classList.add('active');
+}
+
+async function copyText(text,btn){
+
+await navigator.clipboard.writeText(text);
+
+const original=btn.innerText;
+
+btn.innerText='Copied ✓';
+
+setTimeout(()=>{
+btn.innerText=original;
+},1500);
+}
+
+function filterCommands(){
+
+const value=document
+.getElementById('search')
+.value
+.toLowerCase();
+
+document.querySelectorAll('.card').forEach(card=>{
+
+const text=card.innerText.toLowerCase();
+
+card.style.display=
+text.includes(value)
+? 'block'
+: 'none';
+
+});
+}
+</script>
+
 </body>
 </html>
+```
