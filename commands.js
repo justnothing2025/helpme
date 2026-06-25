@@ -13,7 +13,7 @@ details: "Show files & detils"
 
 {
 title: "Create a folder",
-command: "mkdir <path/foldarename>",
+command: "mkdir [path/foldarename]",
 details: "create a folder in this path and folder name.create a folder in this path and folder name.create a folder in this path and folder name.create a folder in this path and folder name.create a folder in this path and folder name.create a folder in this path and folder name.create a folder in this path and folder name.create a folder in this path and folder name.create a folder in this path and folder name.create a folder in this path and folder name.create a folder in this path and folder name.create a folder in this path and folder name.create a folder in this path and folder name.create a folder in this path and folder name.create a folder in this path and folder name.create a folder in this path and folder name."
 }
 
