@@ -4,12 +4,6 @@ linux: {
 
 ssh: [
 
-{
-title: "SSH Login",
-command: "ssh user@192.168.1.10",
-details: "Connect to remote server."
-},
-
 
 {
 title: "SSH Login",
