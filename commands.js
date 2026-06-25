@@ -1,9 +1,41 @@
 const commands = {
 
 linux: {
+    system: [
+
+{
+title: "Show items",
+command: "ls -la",
+details: "Show files & detils"
+},
+
+
+
+{
+title: "Create a folder",
+command: "mkdir <path/foldarename>",
+details: "create a folder in this path and folder name.create a folder in this path and folder name.create a folder in this path and folder name.create a folder in this path and folder name.create a folder in this path and folder name.create a folder in this path and folder name.create a folder in this path and folder name.create a folder in this path and folder name.create a folder in this path and folder name.create a folder in this path and folder name.create a folder in this path and folder name.create a folder in this path and folder name.create a folder in this path and folder name.create a folder in this path and folder name.create a folder in this path and folder name.create a folder in this path and folder name."
+}
+
+],
+
+network: [
+
+{
+title: "IP Address",
+command: "ip a",
+details: "Show all interfaces."
+},
+
+{
+title: "Listening Ports",
+command: "ss -tlnp",
+details: "Show open ports."
+}
+
+],
 
 ssh: [
-
 
 {
 title: "SSH Login",
@@ -37,7 +69,7 @@ details: "Show open ports."
 
 ],
 
-cloudflare: [
+cf: [
 
 {
 title: "Tunnel Logs",
