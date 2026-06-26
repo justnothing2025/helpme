@@ -563,14 +563,25 @@ width:100%;
     max-width:100%;
     padding:15px;
 }
-
 .stats{
-    grid-template-columns:1fr;
-    padding:40px 20px;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:12px;
+
+    padding:30px 15px;
 }
 
 .stat-box{
     width:100%;
+    font-size:1.6rem;
+}
+
+.stat-box p{
+
+    font-size:.8rem;
 }
 
 .products{
