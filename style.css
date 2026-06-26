@@ -542,3 +542,16 @@ width:100%;
 }
 
 }
+
+@media (max-width:768px){
+
+body{
+    background:red !important;
+}
+
+}
+
+
+body{
+    background:lime !important;
+}
