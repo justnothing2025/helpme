@@ -65,7 +65,7 @@ color:#d8b16a;
 
 background:#c7a86b;
 border:none;
-padding:12px 25px;
+padding:8px 15px;
 border-radius:12px;
 
 cursor:pointer;
@@ -122,22 +122,22 @@ color:white;
 
 .hero-card h1{
 
-font-size:4rem;
+font-size:1.8rem;
 margin-bottom:15px;
 
 }
 
 .hero-card h2{
 
-font-size:2rem;
+font-size:1rem;
 margin-bottom:20px;
 line-height:1.8;
 }
 
 .hero-card p{
 
-font-size:1.1rem;
-line-height:2;
+font-size:0.85rem;
+line-height:1.8;
 margin-bottom:30px;
 }
 
@@ -174,7 +174,7 @@ padding:100px 10%;
 
 text-align:center;
 margin-bottom:50px;
-font-size:2.5rem;
+font-size:1.8rem;
 }
 
 .product-grid{
@@ -206,7 +206,7 @@ transform:translateY(-10px);
 .card img{
 
 width:100%;
-height:250px;
+height:180px;
 object-fit:cover;
 }
 
@@ -378,7 +378,7 @@ gap:25px;
 
 background:white;
 
-padding:35px;
+padding:20px;
 
 border-radius:20px;
 
@@ -389,7 +389,7 @@ box-shadow:0 10px 30px rgba(0,0,0,.08);
 
 .stat-box h3{
 
-font-size:2.5rem;
+font-size:2rem;
 
 color:#c7a86b;
 
@@ -463,10 +463,10 @@ cursor:pointer;
 
 .navbar{
 
-padding:15px;
+padding:10px;
 
 flex-direction:column;
-gap:15px;
+gap:8px;
 
 }
 
@@ -478,12 +478,12 @@ justify-content:center;
 
 flex-wrap:wrap;
 
-gap:10px;
+gap:6px;
 }
 
 .nav-links a{
 
-font-size:14px;
+font-size:12px;
 }
 
 }
@@ -492,10 +492,10 @@ font-size:14px;
 
 .navbar{
 
-padding:15px;
+padding:10px;
 
 flex-direction:column;
-gap:15px;
+gap:8px;
 
 }
 
@@ -507,12 +507,12 @@ justify-content:center;
 
 flex-wrap:wrap;
 
-gap:10px;
+gap:6px;
 }
 
 .nav-links a{
 
-font-size:14px;
+font-size:12px;
 }
 
 }
@@ -539,7 +539,8 @@ flex-direction:column;
 
 .main-btn,
 .secondary-btn{
-
+padding:12px 20px;
+font-size:14px;
 width:100%;
 }
 
@@ -560,7 +561,7 @@ width:100%;
 .hero-card{
     width:100%;
     max-width:100%;
-    padding:20px;
+    padding:15px;
 }
 
 .stats{
