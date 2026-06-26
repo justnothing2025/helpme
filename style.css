@@ -1,6 +1,8 @@
+/*
 *{
 outline:1px solid red;
 }
+*/
 *{
 margin:0;
 padding:0;
@@ -543,15 +545,47 @@ width:100%;
 
 }
 
+
+
+
+
 @media (max-width:768px){
 
-body{
-    background:red !important;
+.hero{
+    min-height:auto;
+    padding-top:140px;
+    padding-bottom:60px;
 }
 
+.hero-card{
+    width:100%;
+    max-width:100%;
+    padding:20px;
 }
 
+.stats{
+    grid-template-columns:1fr;
+    padding:40px 20px;
+}
 
-body{
-    background:lime !important;
+.stat-box{
+    width:100%;
+}
+
+.products{
+    padding:60px 20px;
+}
+
+.product-grid{
+    grid-template-columns:1fr;
+}
+
+.services{
+    padding:60px 20px;
+}
+
+.service-grid{
+    grid-template-columns:1fr;
+}
+
 }
