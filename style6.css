@@ -36,7 +36,7 @@ padding:15px 30px;
 
 background:rgba(255,255,255,0.15);
 
-backdrop-filter:blur(1.5px);
+backdrop-filter:blur(7px);
 
 border:1px solid rgba(255,255,255,0.3);
 
@@ -52,20 +52,20 @@ gap:25px;
 
 .nav-links a{
 text-decoration:none;
-color:white;
+color:#533907;
 font-weight:500;
 transition:0.3s;
 }
 
 .nav-links a:hover{
-color:#d8b16a;
+color:#d6ee00;
 }
 
 .signup-btn{
 
 background:#c7a86b;
 border:none;
-padding:8px 15px;
+padding:5px 9px;
 border-radius:12px;
 
 cursor:pointer;
@@ -720,6 +720,8 @@ padding:30px;
 border-radius:15px;
 
 box-shadow:0 5px 15px rgba(0,0,0,.05);
+
+grid-template-columns:repeat(2,1fr);
 }
 
 .why-card h3{
