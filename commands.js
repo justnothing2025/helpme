@@ -69,7 +69,7 @@ details: "Show open ports."
 
 ],
 
-cf: [
+cloudflare: [
 
 {
 title: "Tunnel Logs",
